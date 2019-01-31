@@ -9,8 +9,6 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 
-routes(app)
-
 const jwtClient = new google.auth.JWT(
   process.env.CLIENT_EMAIL,
   null,
@@ -27,6 +25,8 @@ jwtClient.authorize((err, token) => {
   else
     console.log("Google JWT successfully connected!")
 })
+
+routes(app, jwtClient)
 
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
