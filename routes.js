@@ -14,9 +14,19 @@ module.exports = (app, jwt) => {
       res.status(500).json({ error: "Not a valid sheet name" })
     }
     sheets.spreadsheets.values.get({
-      spreadsheetId: sheetIds[req.params.name],
-      range: "A1:ZZZ100000"
-    }, 
+      auth: jwt,
+      spreadsheetId: sheetIds[req.params.name].id,
+      range: "A1:ZZZ100000",
+      valueRenderOption: "FORMULA"
+    }, (err, data) => {
+      if (err) {
+        console.error(err)
+        res.status(500).send(err)
+      }
+      else {
+        res.status(200).send(data)
+      }
+    })
   })
   
   app.post("/api/sheets/:name/update", (req, res) => {
