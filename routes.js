@@ -29,7 +29,9 @@ module.exports = (app, jwt) => {
     })
   })
   
-  app.post("/api/sheets/:name/update", (req, res) => {
+  app.post("/api/sheets/:name/update/rows", (req, res) => {
     console.log(req.params.name)
+    console.log(req.body)
+    res.status(200).send(
   })
 }
