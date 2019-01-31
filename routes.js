@@ -11,9 +11,8 @@ const sheetIds = {
 
 module.exports = (app, jwt) => {
   app.get("/api/sheets/:name", (req, res) => {
-    if (!sheetIds[req.params.name]) {
+    if (!sheetIds[req.params.name])
       res.status(500).json({ error: "Not a valid sheet name" })
-    }
     sheets.spreadsheets.values.get({
       auth: jwt,
       spreadsheetId: sheetIds[req.params.name].id,
@@ -30,8 +29,9 @@ module.exports = (app, jwt) => {
   })
   
   app.post("/api/sheets/:name/update/rows", (req, res) => {
-    console.log(req.params.name)
+    if (!sheetIds[req.params.name])
+      res.status(500).json({ error: "Not a valid sheet name" })
     console.log(req.body)
-    res.status(200).send(
+    res.status(200).send("Success")
   })
 }
