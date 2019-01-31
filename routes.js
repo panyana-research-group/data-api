@@ -4,7 +4,8 @@ const drive = google.drive("v3")
 
 const sheetIds = {
   lore: {
-    id: "1ThxEY2LC8Rg9WUd53aWXrpe8wsprnEwVyFLKb6QFf0k"
+    id: "1ThxEY2LC8Rg9WUd53aWXrpe8wsprnEwVyFLKb6QFf0k",
+    range: "A2:G"
   }
 }
 
@@ -16,7 +17,7 @@ module.exports = (app, jwt) => {
     sheets.spreadsheets.values.get({
       auth: jwt,
       spreadsheetId: sheetIds[req.params.name].id,
-      range: "A1:ZZZ100000",
+      range: sheetIds[req.params.name].range,
       valueRenderOption: "FORMULA"
     }, (err, data) => {
       if (err) {
