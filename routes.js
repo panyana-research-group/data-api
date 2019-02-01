@@ -41,9 +41,18 @@ module.exports = (app, jwt) => {
     }, (err, data) => {
       if (err) return console.error(err)
       console.log(`Created folder for ${req.body[0][0]}`)
-      sheets.spreadsheets.values.batchUpdate({
+      req.body[0].push(data.data.id)
+      sheets.spreadsheets.values.append({
         auth: jwt,
-        spreadsheetId: sheetIds
+        spreadsheetId: sheetIds.lore.id,
+        range: sheetIds.lore.range,
+        valueInputOption: "USER_ENTERED",
+        insertDataOption: "INSERT_ROWS",
+        includeValuesInResponse: true
+      }, (err, data) => {
+        if (err) return console.error(err)
+        res.status(200).send(
+        
       res.status(200).send({ msg: "success", id: data.data.id })
     })
   })
