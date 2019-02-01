@@ -1,5 +1,6 @@
 const express = require('express')
 const cors = require('cors')
+const http = require('http')
 const bodyParser = require('body-parser')
 const { google } = require('googleapis')
 const routes = require('./routes.js')
@@ -31,3 +32,7 @@ routes(app, jwtClient)
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
 })
+
+setInterval(() => {
+  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
+}, 280000);
