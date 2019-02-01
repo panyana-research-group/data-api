@@ -28,6 +28,11 @@ module.exports = (app, jwt) => {
     })
   })
   
+  app.post("/api/sheets/lore/new", (req, res) => {
+    console.log(req.body)
+    res.status(200).send("Success")
+  })
+  
   app.post("/api/sheets/:name/append/", (req, res) => {
     if (!sheetIds[req.params.name])
       res.status(500).json({ error: "Not a valid sheet name" })
