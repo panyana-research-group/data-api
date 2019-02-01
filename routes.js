@@ -9,6 +9,8 @@ const sheetIds = {
   }
 }
 
+const incompleteFolder = "1-VX6aNg19aKjIMn2r92uGrrTVafWIFLr"
+
 module.exports = (app, jwt) => {
   app.get("/api/sheets/:name", (req, res) => {
     if (!sheetIds[req.params.name])
@@ -29,8 +31,17 @@ module.exports = (app, jwt) => {
   })
   
   app.post("/api/sheets/lore/new", (req, res) => {
-    console.log(req.body)
-    res.status(200).send("Success")
+    drive.files.create({
+      auth: jwt,
+      resource: {
+        name: req.body[0][0],
+        mimeType: "application/vnd.google-apps.folder",
+        parents: [incompleteFolder]
+      }
+    }, (err, data) => {
+      if (err) return console.error(err)
+      res.status(200).send({ msg: "success", id: data.data.id })
+    })
   })
   
   app.post("/api/sheets/:name/append/", (req, res) => {
