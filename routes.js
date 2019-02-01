@@ -31,6 +31,13 @@ module.exports = (app, jwt) => {
   })
   
   app.post("/api/sheets/lore/new", (req, res) => {
+    // drive.files.get({
+    //   auth: jwt,
+    //   fileId: "12-YB1KQtMezS0M8mst5T1wKiv9PsevTb"
+    // }, (err, data) => {
+    //   if (err) return console.error(err)
+    //   console.log(data.data)
+    // })
     drive.files.create({
       auth: jwt,
       resource: {
