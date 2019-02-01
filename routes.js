@@ -30,14 +30,7 @@ module.exports = (app, jwt) => {
     })
   })
   
-  app.post("/api/sheets/lore/new", (req, res) => {
-    // drive.files.get({
-    //   auth: jwt,
-    //   fileId: "12-YB1KQtMezS0M8mst5T1wKiv9PsevTb"
-    // }, (err, data) => {
-    //   if (err) return console.error(err)
-    //   console.log(data.data)
-    // })
+  app.post("/api/sheets/lore/new", async (req, res) => {
     drive.files.create({
       auth: jwt,
       resource: {
@@ -48,6 +41,9 @@ module.exports = (app, jwt) => {
     }, (err, data) => {
       if (err) return console.error(err)
       console.log(`Created folder for ${req.body[0][0]}`)
+      sheets.spreadsheets.values.batchUpdate({
+        auth: jwt,
+        spreadsheetId: sheetIds
       res.status(200).send({ msg: "success", id: data.data.id })
     })
   })
