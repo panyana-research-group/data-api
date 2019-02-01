@@ -5,7 +5,7 @@ const drive = google.drive("v3")
 const sheetIds = {
   lore: {
     id: "1ThxEY2LC8Rg9WUd53aWXrpe8wsprnEwVyFLKb6QFf0k",
-    range: "Lore!A2:H"
+    range: "Lore_raw!A2:H"
   }
 }
 
@@ -39,7 +39,10 @@ module.exports = (app, jwt) => {
         parents: [incompleteFolder]
       }
     }, (err, data) => {
-      if (err) return console.error(err)
+      if (err) {
+        res.status(500).send({ msg: "error" })
+        return console.error(err)
+      }
       console.log(`Created folder for ${req.body[0][0]}`)
       req.body[0].push(data.data.id)
       sheets.spreadsheets.values.append({
@@ -48,12 +51,17 @@ module.exports = (app, jwt) => {
         range: sheetIds.lore.range,
         valueInputOption: "USER_ENTERED",
         insertDataOption: "INSERT_ROWS",
-        includeValuesInResponse: true
+        includeValuesInResponse: true,
+        resource: {
+          values: req.body
+        }
       }, (err, data) => {
-        if (err) return console.error(err)
-        res.status(200).send(
-        
-      res.status(200).send({ msg: "success", id: data.data.id })
+        if (err) {
+          res.status(500).send({ msg: "error" })
+          return console.error(err)
+        }
+        res.status(200).send({ msg: "success" })
+      })
     })
   })
   
