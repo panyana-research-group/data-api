@@ -68,7 +68,7 @@ module.exports = (app, jwt) => {
     //     res.status(200).send({ msg: "success" })
     //   })
     // })
-    res.status(500).send({ msg: "success" })
+    res.status(200).send({ msg: "success" })
   })
   
   app.post("/api/sheets/:name/append/", (req, res) => {
