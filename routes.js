@@ -44,7 +44,7 @@ module.exports = (app, jwt) => {
     //   }
     // }, (err, data) => {
     //   if (err) {
-    //     res.status(500).send({ msg: "error" })
+    //     res.status(500).send({ msg: "error" , err: err })
     //     return console.error(err)
     //   }
     //   console.log(`Created folder for ${req.body[0][0]}`)
@@ -61,14 +61,14 @@ module.exports = (app, jwt) => {
     //     }
     //   }, (err, data) => {
     //     if (err) {
-    //       res.status(500).send({ msg: "error" })
+    //       res.status(500).send({ msg: "error", err: err })
     //       return console.error(err)
     //     }
     //     console.log("Added pages to Lore_raw")
     //     res.status(200).send({ msg: "success" })
     //   })
     // })
-    res.status(200).send({ msg: "success" })
+    res.status(500).send({ msg: "success" })
   })
   
   app.post("/api/sheets/:name/append/", (req, res) => {
