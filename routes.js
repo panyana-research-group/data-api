@@ -5,7 +5,11 @@ const drive = google.drive("v3")
 const sheetIds = {
   lore: {
     id: "1ThxEY2LC8Rg9WUd53aWXrpe8wsprnEwVyFLKb6QFf0k",
-    range: "Lore_raw!A2:H"
+    range: "Lore!A2:H"
+  },
+  loreRaw: {
+    id: "1ThxEY2LC8Rg9WUd53aWXrpe8wsprnEwVyFLKb6QFf0k",
+    range: "Lore_raw!A2:F"
   }
 }
 
@@ -47,8 +51,8 @@ module.exports = (app, jwt) => {
       req.body[0].push(data.data.id)
       sheets.spreadsheets.values.append({
         auth: jwt,
-        spreadsheetId: sheetIds.lore.id,
-        range: sheetIds.lore.range,
+        spreadsheetId: sheetIds.loreRaw.id,
+        range: sheetIds.loreRaw.range,
         valueInputOption: "USER_ENTERED",
         insertDataOption: "INSERT_ROWS",
         includeValuesInResponse: true,
@@ -60,6 +64,7 @@ module.exports = (app, jwt) => {
           res.status(500).send({ msg: "error" })
           return console.error(err)
         }
+        console.log("Added pages to Lore_raw")
         res.status(200).send({ msg: "success" })
       })
     })
