@@ -35,39 +35,40 @@ module.exports = (app, jwt) => {
   })
   
   app.post("/api/sheets/lore/new", async (req, res) => {
-    drive.files.create({
-      auth: jwt,
-      resource: {
-        name: req.body[0][0],
-        mimeType: "application/vnd.google-apps.folder",
-        parents: [incompleteFolder]
-      }
-    }, (err, data) => {
-      if (err) {
-        res.status(500).send({ msg: "error" })
-        return console.error(err)
-      }
-      console.log(`Created folder for ${req.body[0][0]}`)
-      req.body[0].push(data.data.id)
-      sheets.spreadsheets.values.append({
-        auth: jwt,
-        spreadsheetId: sheetIds.loreRaw.id,
-        range: sheetIds.loreRaw.range,
-        valueInputOption: "USER_ENTERED",
-        insertDataOption: "INSERT_ROWS",
-        includeValuesInResponse: true,
-        resource: {
-          values: req.body
-        }
-      }, (err, data) => {
-        if (err) {
-          res.status(500).send({ msg: "error" })
-          return console.error(err)
-        }
-        console.log("Added pages to Lore_raw")
-        res.status(200).send({ msg: "success" })
-      })
-    })
+    // drive.files.create({
+    //   auth: jwt,
+    //   resource: {
+    //     name: req.body[0][0],
+    //     mimeType: "application/vnd.google-apps.folder",
+    //     parents: [incompleteFolder]
+    //   }
+    // }, (err, data) => {
+    //   if (err) {
+    //     res.status(500).send({ msg: "error" })
+    //     return console.error(err)
+    //   }
+    //   console.log(`Created folder for ${req.body[0][0]}`)
+    //   req.body[0].push(data.data.id)
+    //   sheets.spreadsheets.values.append({
+    //     auth: jwt,
+    //     spreadsheetId: sheetIds.loreRaw.id,
+    //     range: sheetIds.loreRaw.range,
+    //     valueInputOption: "USER_ENTERED",
+    //     insertDataOption: "INSERT_ROWS",
+    //     includeValuesInResponse: true,
+    //     resource: {
+    //       values: req.body
+    //     }
+    //   }, (err, data) => {
+    //     if (err) {
+    //       res.status(500).send({ msg: "error" })
+    //       return console.error(err)
+    //     }
+    //     console.log("Added pages to Lore_raw")
+    //     res.status(200).send({ msg: "success" })
+    //   })
+    // })
+    res.status(200).send({ msg: "success" })
   })
   
   app.post("/api/sheets/:name/append/", (req, res) => {
