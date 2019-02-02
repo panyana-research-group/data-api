@@ -29,6 +29,7 @@ module.exports = (app, jwt) => {
         res.status(500).send(err)
       }
       else {
+        console.log("Success: Get sheet: " + req.params.name)
         res.status(200).send(data)
       }
     })
