@@ -3,6 +3,13 @@ const lodash = require('lodash')
 
 module.exports = (app, db) => {
   app.get('/lore/:id', (req, res) => {
+    if (req.params.id === "all") {
+      db.collection('lore').find().toArray((err, allItems) => {
+        if (err) res.status(500).send(err)
+        else res.status(200).send(allItems)
+      })
+      return
+    }
     const details = { _id: new ObjectID(req.params.id) }
     db.collection('lore').findOne(details, (err, item) => {
       if (err) res.status(404).send(err)
