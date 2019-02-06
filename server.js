@@ -27,7 +27,7 @@ jwtClient.authorize((err, token) => {
     console.log("Google JWT successfully connected!")
 })
 
-routes(app, jwtClient)
+// routes(app, jwtClient)
 
 const listener = app.listen(process.env.PORT, function() {
   console.log('Your app is listening on port ' + listener.address().port);
