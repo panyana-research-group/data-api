@@ -9,7 +9,15 @@ const app = express()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(cors())
+
+const whitelist = ['http://localhost:3000', 'https://panyanaresearch.com']
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (whitelist.indexOf(origin) !== -1) callback(null, true)
+    else (new Error('Not allowed by CORS'))
+  }
+}
+app.use(cors(corsOptions))
 
 const jwtClient = new google.auth.JWT(
   process.env.CLIENT_EMAIL,
