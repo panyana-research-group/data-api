@@ -45,9 +45,11 @@ module.exports = (app, db, jwt) => {
 
   app.put('/lore/:id', (req, res) => {
     const details = { _id: new ObjectID(req.params.id) }
-    db.collection('lore').replaceOne(details, req.body, (err, result) => {
-      if (err) res.status(500).send(err.message)
-      else res.status(200).send(req.body)
-    })
+    console.log(req.body)
+    res.send('test')
+    // db.collection('lore').replaceOne(details, req.body, (err, result) => {
+    //   if (err) res.status(500).send(err.message)
+    //   else res.status(200).send(req.body)
+    // })
   })
 }
