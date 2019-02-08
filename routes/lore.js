@@ -45,7 +45,16 @@ module.exports = (app, db, jwt) => {
   app.put('/lore/:id', (req, res) => {
     const details = { _id: new ObjectID(req.params.id) }
     console.log(req.body)
-    db.collection('lore').updateOne(details, { $set: { 'test': req.body.value} })  
+    db.collection('lore').updateOne(
+      details,
+      { $set: 
+          { 
+            onWiki: req.body.onWiki,
+            missingWiki: req.body.missingWiki,
+            missingPics: req.body.missingPics,
+          },
+      }
+    )  
     res.send('test')
     // db.collection('lore').replaceOne(details, req.body, (err, result) => {
     //   if (err) res.status(500).send(err.message)
