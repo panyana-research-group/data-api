@@ -33,6 +33,7 @@ module.exports = (app, db, jwt) => {
         onWiki: req.body.onWiki,
         missingWiki: req.body.missingWiki,
         missingPics: req.body.missingPics,
+        addWiki: '',
         folderId: folderRes.data.id
       }
       db.collection('lore').insertOne(story, (err, result) => {
