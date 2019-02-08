@@ -3,7 +3,7 @@ const { google } = require('googleapis')
 const sheets = google.sheets('v4')
 
 module.exports = (app, db, jwt) => {
-  lore(app, db)
+  lore(app, db, jwt)
   
   // app.get('/convert', (req, res) => {
   //   sheets.spreadsheets.values.get({

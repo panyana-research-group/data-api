@@ -1,7 +1,9 @@
+const { google } = require('googleapis')
+const drive = google.drive('v3')
 const ObjectID = require('mongodb').ObjectID
 const lodash = require('lodash')
 
-module.exports = (app, db) => {
+module.exports = (app, db, jwt) => {
   app.get('/lore/:id', (req, res) => {
     if (req.params.id === "all") {
       db.collection('lore').find().toArray((err, allItems) => {
@@ -19,18 +21,25 @@ module.exports = (app, db) => {
 
   app.post('/lore', (req, res) => {
     console.log(req.body)
-    const story = {
-      title: req.body.title,
-      onWiki: `0/${req.body.pageCount}`,
-      missingWiki: lodash.range(1, parseInt(req.body.pageCount) + 1).join(','),
-      missingPics: `title,${lodash
-        .range(1, parseInt(req.body.pageCount) + 1)
-        .join(',')}`,
-      folderId: req.body.folderId
-    }
-    db.collection('lore').insertOne(story, (err, result) => {
-      if (err) res.status(500).send(err)
-      else res.status(200).send(result.ops[0])
+    drive.files.create({
+      auth: jwt,
+      resource: {
+        name: req.body.title,
+        mimeType: 'application/vnd.google-apps.folder',
+        parents: ['1-VX6aNg19aKjIMn2r92uGrrTVafWIFLr']
+      }
+    }).then(folderRes => {
+      const story = {
+        title: req.body.title,
+        onWiki: req.body.onWiki,
+        missingWiki: req.body.missingWiki,
+        missingPics: req.body.missingPics,
+        folderId: folderRes.data.id
+      }
+      db.collection('lore').insertOne(story, (err, result) => {
+        if (err) res.status(500).send(err)
+        else res.status(200).send(result.ops[0])
+      })
     })
   })
 
