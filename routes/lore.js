@@ -20,7 +20,6 @@ module.exports = (app, db, jwt) => {
   })
 
   app.post('/lore', (req, res) => {
-    console.log(req.body)
     drive.files.create({
       auth: jwt,
       resource: {
@@ -46,6 +45,7 @@ module.exports = (app, db, jwt) => {
   app.put('/lore/:id', (req, res) => {
     const details = { _id: new ObjectID(req.params.id) }
     console.log(req.body)
+    db.collection('lore').updateOne(details, { $set: { 'test': req.body.value} })  
     res.send('test')
     // db.collection('lore').replaceOne(details, req.body, (err, result) => {
     //   if (err) res.status(500).send(err.message)
