@@ -70,30 +70,23 @@ module.exports = (app, db, jwt, upload) => {
           }
         })
       )
-      //   .then(result => {
-      //   console.log(`Uploaded page ${page} for ${req.body.title}`)
-      // }).catch(err => {
-      //   console.error(`Error uploading page ${page} for ${req.body.title}`)
-      //   console.error(err)
-      //   return res.status(500).send(err)
-      // })
     }
-    db.collection('lore').updateOne(
-      details,
-      { $set: 
-          { 
-            onWiki: req.body.onWiki,
-            missingWiki: req.body.missingWiki,
-            missingPics: req.body.missingPics,
-          },
-      }
-    ).then(DBRes => {
-      console.log(DBRes)
+    promises.push(
+      db.collection('lore').updateOne(
+        details,
+        { $set: 
+            { 
+              onWiki: req.body.onWiki,
+              missingWiki: req.body.missingWiki,
+              missingPics: req.body.missingPics,
+            },
+        }
+      )
+    )
+    Promise.all(promises).then(results => {
+      res.status(200).send(results)
+    }).catch(err => {
+      res.status(500).send(err)
     })
-    res.send('test')
-    // db.collection('lore').replaceOne(details, req.body, (err, result) => {
-    //   if (err) res.status(500).send(err.message)
-    //   else res.status(200).send(req.body)
-    // })
   })
 }
