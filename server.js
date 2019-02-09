@@ -6,7 +6,9 @@ const bodyParser = require('body-parser')
 const mongo = require('mongodb').MongoClient
 const { google } = require('googleapis')
 const routes = require('./routes.js')
+
 const app = express()
+const upload = multer()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -40,7 +42,7 @@ jwtClient.authorize((err, token) => {
 
 mongo.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + process.env.DB_URL, { useNewUrlParser: true }, (err, db) => {
   if (err) return console.error(err)
-  require('./routes/index.js')(app, db.db('panyana-api'), jwtClient)
+  require('./routes/index.js')(app, db.db('panyana-api'), jwtClient, upload)
   console.log('Connected to MongoDB')
   
   const listener = app.listen(process.env.PORT, function() {

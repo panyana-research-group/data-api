@@ -2,8 +2,8 @@ const lore = require('./lore')
 const { google } = require('googleapis')
 const sheets = google.sheets('v4')
 
-module.exports = (app, db, jwt) => {
-  lore(app, db, jwt)
+module.exports = (app, db, jwt, upload) => {
+  lore(app, db, jwt, upload)
   
   // app.get('/convert', (req, res) => {
   //   sheets.spreadsheets.values.get({

@@ -3,7 +3,7 @@ const drive = google.drive('v3')
 const ObjectID = require('mongodb').ObjectID
 const lodash = require('lodash')
 
-module.exports = (app, db, jwt) => {
+module.exports = (app, db, jwt, upload) => {
   app.get('/lore/:id', (req, res) => {
     if (req.params.id === "all") {
       db.collection('lore').find().toArray((err, allItems) => {
@@ -43,19 +43,19 @@ module.exports = (app, db, jwt) => {
     })
   })
 
-  app.put('/lore/:id', (req, res) => {
+  app.put('/lore/:id', upload.none(), (req, res) => {
     const details = { _id: new ObjectID(req.params.id) }
     console.log(req.body)
-    db.collection('lore').updateOne(
-      details,
-      { $set: 
-          { 
-            onWiki: req.body.onWiki,
-            missingWiki: req.body.missingWiki,
-            missingPics: req.body.missingPics,
-          },
-      }
-    )  
+    // db.collection('lore').updateOne(
+    //   details,
+    //   { $set: 
+    //       { 
+    //         onWiki: req.body.onWiki,
+    //         missingWiki: req.body.missingWiki,
+    //         missingPics: req.body.missingPics,
+    //       },
+    //   }
+    // )  
     res.send('test')
     // db.collection('lore').replaceOne(details, req.body, (err, result) => {
     //   if (err) res.status(500).send(err.message)
