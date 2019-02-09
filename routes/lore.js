@@ -43,9 +43,10 @@ module.exports = (app, db, jwt, upload) => {
     })
   })
 
-  app.put('/lore/:id', upload.none(), (req, res) => {
+  app.put('/lore/:id', upload.any(), (req, res) => {
     const details = { _id: new ObjectID(req.params.id) }
     console.log(req.body)
+    console.log(req.files)
     // db.collection('lore').updateOne(
     //   details,
     //   { $set: 
