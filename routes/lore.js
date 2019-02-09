@@ -79,6 +79,7 @@ module.exports = (app, db, jwt, upload) => {
               onWiki: req.body.onWiki,
               missingWiki: req.body.missingWiki,
               missingPics: req.body.missingPics,
+              addWiki: req.body.addWiki
             },
         }
       )
