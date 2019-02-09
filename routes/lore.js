@@ -49,28 +49,34 @@ module.exports = (app, db, jwt, upload) => {
     console.log(req.body)
     console.log(req.files)
     console.log('---------------------------------------------')
+    const promises = []
     for (let i = 0; i < req.files.length; i++) {
       const page = req.files[i].fieldname.split('-')[1]
-      let fileName = `${req.body.title.replace(/\s/g, '_')}${page === 'title' ? '' : '_' + page}${req.files[i].mimetype.split('/')[1]}`
+      const ext = req.files[i].mimetype.split('/')[1] === 'jpeg' ? 'jpg' : req.files[i].mimetype.split('/')[1]
+      let fileName = `${req.body.title.replace(/\s/g, '_')}${page === 'title' ? '' : '_' + page}.${ext}`
       const stream = new Duplex()
       stream.push(req.files[i].buffer)
       stream.push(null)
-      drive.files.create({
-        auth: jwt,
-        resource: {
-          name: fileName,
-          parents: [req.body.folderId]
-        },
-        media: {
-          mimeType: req.files[i].mimetype,
-          body: stream
-        }
-      }).then(result => {
-        console.log(`Uploaded page ${page} for ${req.body.title}`)
-      }).catch(err => {
-        console.error(`Error uploading page ${page} for ${req.body.title}`)
-        console.error(err)
-      })
+      promises.push(
+        drive.files.create({
+          auth: jwt,
+          resource: {
+            name: fileName,
+            parents: [req.body.folderId]
+          },
+          media: {
+            mimeType: req.files[i].mimetype,
+            body: stream
+          }
+        })
+      )
+      //   .then(result => {
+      //   console.log(`Uploaded page ${page} for ${req.body.title}`)
+      // }).catch(err => {
+      //   console.error(`Error uploading page ${page} for ${req.body.title}`)
+      //   console.error(err)
+      //   return res.status(500).send(err)
+      // })
     }
     db.collection('lore').updateOne(
       details,
@@ -81,7 +87,9 @@ module.exports = (app, db, jwt, upload) => {
             missingPics: req.body.missingPics,
           },
       }
-    )  
+    ).then(DBRes => {
+      console.log(DBRes)
+    })
     res.send('test')
     // db.collection('lore').replaceOne(details, req.body, (err, result) => {
     //   if (err) res.status(500).send(err.message)
