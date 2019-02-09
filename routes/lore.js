@@ -51,18 +51,37 @@ module.exports = (app, db, jwt, upload) => {
     console.log('---------------------------------------------')
     for (let i = 0; i < req.files.length; i++) {
       const page = req.files[i].fieldname.split('-')[1]
-      
+      let fileName = `${req.body.title.replace(/\s/g, '_')}${page === 'title' ? '' : '_' + page}${req.files[i].mimetype.split('/')[1]}`
+      const stream = new Duplex()
+      stream.push(req.files[i].buffer)
+      stream.push(null)
+      drive.files.create({
+        auth: jwt,
+        resource: {
+          name: fileName,
+          parents: [req.body.folderId]
+        },
+        media: {
+          mimeType: req.files[i].mimetype,
+          body: stream
+        }
+      }).then(result => {
+        console.log(`Uploaded page ${page} for ${req.body.title}`)
+      }).catch(err => {
+        console.error(`Error uploading page ${page} for ${req.body.title}`)
+        console.error(err)
+      })
     }
-    // db.collection('lore').updateOne(
-    //   details,
-    //   { $set: 
-    //       { 
-    //         onWiki: req.body.onWiki,
-    //         missingWiki: req.body.missingWiki,
-    //         missingPics: req.body.missingPics,
-    //       },
-    //   }
-    // )  
+    db.collection('lore').updateOne(
+      details,
+      { $set: 
+          { 
+            onWiki: req.body.onWiki,
+            missingWiki: req.body.missingWiki,
+            missingPics: req.body.missingPics,
+          },
+      }
+    )  
     res.send('test')
     // db.collection('lore').replaceOne(details, req.body, (err, result) => {
     //   if (err) res.status(500).send(err.message)
