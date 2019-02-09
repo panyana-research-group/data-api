@@ -1,4 +1,5 @@
 const express = require('express')
+const multer = require('multer')
 const cors = require('cors')
 const http = require('http')
 const bodyParser = require('body-parser')
