@@ -7,6 +7,10 @@ const mongo = require('mongodb').MongoClient
 const { google } = require('googleapis')
 const routes = require('./routes.js')
 
+if (!process.env.ENVIRONMENT) {
+  require('dotenv').config()
+}
+
 const app = express()
 const upload = multer()
 
