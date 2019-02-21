@@ -5,8 +5,16 @@ const sheets = google.sheets('v4')
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
   
-  app.get('/', (req, res) => {
-    res.sendFile()
+  app.get('/convert', (req, res) => {
+    db.collection('lore').find().toArray((err, allItems) => {
+      if (err) res.status(500).send(err)
+      else {
+        res.status(200).send('OK')
+        allItems.forEach(item => {
+          console.log(item)
+        })
+      }
+    })
   })
   
   // app.get('/convert', (req, res) => {
