@@ -14,6 +14,8 @@ if (!process.env.ENVIRONMENT) {
 const app = express()
 const upload = multer()
 
+console.log(process.env)
+
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
