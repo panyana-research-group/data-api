@@ -5,6 +5,10 @@ const sheets = google.sheets('v4')
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
   
+  app.get('/', (req, res) => {
+    res.sendFile()
+  })
+  
   // app.get('/convert', (req, res) => {
   //   sheets.spreadsheets.values.get({
   //     auth: jwt,
