@@ -2,19 +2,37 @@ const lore = require('./lore')
 const { google } = require('googleapis')
 const sheets = google.sheets('v4')
 
+const ObjectID = require('mongodb').ObjectID
+
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
   
   app.get('/convert', (req, res) => {
-    db.collection('lore').find().toArray((err, allItems) => {
-      if (err) res.status(500).send(err)
-      else {
-        res.status(200).send('OK')
-        allItems.forEach(item => {
-          console.log(item)
-        })
-      }
-    })
+    db.collection('lore').updateOne(
+      { _id: new ObjectID(
+    // db.collection('lore').find().toArray((err, allItems) => {
+    //   if (err) res.status(500).send(err)
+    //   else {
+    //     const promises = []
+    //     res.status(200).send('OK')
+    //     allItems.forEach(item => {
+    //       item.missingWiki = item.missingWiki.split(',').join(', ')
+    //       item.missingPics = item.missingPics.split(',').join(', ')
+    //       item.addWiki = item.addWiki.split(',').join(', ')
+    //       console.log(item)
+    //       // promises.push(
+    //       //   db.collection('lore').updateOne(
+    //       //     { _id: new ObjectID(item._id) },
+    //       //     { $set:
+    //       //       {
+    //       //         missingWiki: item.missingWiki.split(',').join(', '),
+    //       //       }
+    //       //     }
+    //       //   )
+    //       // )
+    //     })
+    //   }
+    // })
   })
   
   // app.get('/convert', (req, res) => {
