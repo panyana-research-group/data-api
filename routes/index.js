@@ -7,19 +7,34 @@ const ObjectID = require('mongodb').ObjectID
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
   
-  app.get('/convert', (req, res) => {
-    db.collection('lore').find().toArray((err, allItems) => {
-      if (err) res.status(500).send(err)
-      else {
-        allItems.forEach(item => {
-          item.missingWiki = item.missinWiki.split(', ').sort().join(', ')
-          item.missingPics = item.missingPics.split(', ').sort().join(', ')
-          item.addWiki = item.addWiki.split(', ').sort().join(', ')
-          console.log(item)
-        })
-      }
-    })
-  })
+  // app.get('/convert', (req, res) => {
+  //   db.collection('lore').find().toArray((err, allItems) => {
+  //     if (err) res.status(500).send(err)
+  //     else {
+  //       const promises = []
+  //       allItems.forEach(item => {
+  //         promises.push(
+  //           db.collection('lore').updateOne(
+  //             { _id: new ObjectID(item._id) },
+  //             { $set: 
+  //              {
+  //                addWiki: item.addWiki.split(', ').sort((a, b) => {
+  //                  if (parseInt(a) < parseInt(b)) return -1
+  //                  else return 1
+  //                }).join(', ')
+  //              }
+  //             }
+  //           )
+  //         )
+  //       })
+  //       Promise.all(promises).then(r => {
+  //         res.status(200).send(r)
+  //       }).catch(e => {
+  //         res.status(500).send(e)
+  //       })
+  //     }
+  //   })
+  // })
   
   // app.get('/convert', (req, res) => {
   //   sheets.spreadsheets.values.get({
