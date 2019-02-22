@@ -46,14 +46,16 @@ module.exports = (app, db, jwt, upload) => {
 
   app.put('/lore/:id', upload.any(), (req, res) => {
     const details = { _id: new ObjectID(req.params.id) }
-    console.log(req.body)
-    console.log(req.files)
+    // console.log(req.body)
+    // console.log(req.files)
     console.log('---------------------------------------------')
     const promises = []
     for (let i = 0; i < req.files.length; i++) {
       const page = req.files[i].fieldname.split('-')[1]
       const ext = req.files[i].mimetype.split('/')[1] === 'jpeg' ? 'jpg' : req.files[i].mimetype.split('/')[1]
-      let fileName = `${req.body.title.replace(/\s/g, '_')}${page === 'title' ? '' : '_' + page}.${ext}`
+      const part = req.files[i].fieldname.split('-')[2]
+
+      let fileName = `${req.body.title.replace(/\s/g, '_')}${page === 'title' ? '' : '_' + page + (part === "1" ? 'b' : '')}.${ext}`
       const stream = new Duplex()
       stream.push(req.files[i].buffer)
       stream.push(null)
