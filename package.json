@@ -7,7 +7,7 @@
   "description": "Panyana Research Group API",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "node sever.js",
     "dev": "nodemon server.js"
   },
   "dependencies": {
