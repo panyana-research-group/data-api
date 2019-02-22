@@ -49,7 +49,7 @@ mongo.connect('mongodb://' + process.env.DB_USER + ':' + process.env.DB_PASS + p
   require('./routes/index.js')(app, db.db('panyana-api'), jwtClient, upload)
   console.log('Connected to MongoDB')
   
-  const listener = app.listen(process.env.PORT, function() {
+  const listener = app.listen(process.env.ENVIRONMENT ? process.env.PORT : 8000, function() {
     console.log('Your app is listening on port ' + listener.address().port)
   })
   setInterval(() => {
