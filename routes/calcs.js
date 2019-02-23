@@ -5,7 +5,6 @@ const mats = require('../materials')
 
 module.exports = app => {
   app.post('/calcs/engine/mats', (req, res) => {
-    console.log(req.body)
     const engine = req.body.engine
     let maxSpeed = 0
     let optimal = null
