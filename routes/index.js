@@ -1,5 +1,6 @@
 const lore = require('./lore')
 const calcs = require('./calcs')
+const mats = require('../data/materials')
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')
 
@@ -8,6 +9,11 @@ const calcs = require('./calcs')
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
   calcs(app)
+
+  app.get('/materials', (req, res) => {
+    if (mats) res.status(200).send(mats)
+    else res.status(500).send(Error('materials.json file not found!'))
+  })
   
   // app.get('/convert', (req, res) => {
   //   db.collection('lore').find().toArray((err, allItems) => {

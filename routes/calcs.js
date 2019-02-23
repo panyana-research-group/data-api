@@ -1,7 +1,7 @@
 const weight = require('../functions/weight')
 const coolingFactor = require('../functions/coolingFactor')
 const ohTime = require('../functions/ohTime')
-const mats = require('../materials')
+const mats = require('../data/materials')
 
 module.exports = app => {
   app.post('/calcs/engine/mats', (req, res) => {
