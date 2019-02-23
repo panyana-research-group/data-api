@@ -5,7 +5,6 @@ const http = require('http')
 const bodyParser = require('body-parser')
 const mongo = require('mongodb').MongoClient
 const { google } = require('googleapis')
-const routes = require('./routes.js')
 
 if (!process.env.ENVIRONMENT) {
   require('dotenv').config()
@@ -21,7 +20,7 @@ const whitelist = ['http://localhost:3000', 'https://panyanaresearch.com']
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) callback(null, true)
-    else (new Error('Not allowed by CORS'))
+    else callback(Error('Not allowed by CORS'))
   }
 }
 app.use(cors(corsOptions))
