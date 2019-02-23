@@ -2,7 +2,6 @@ const { google } = require('googleapis')
 const drive = google.drive('v3')
 const ObjectID = require('mongodb').ObjectID
 const Duplex = require('stream').Duplex
-const lodash = require('lodash')
 
 module.exports = (app, db, jwt, upload) => {
   app.get('/lore/:id', (req, res) => {
@@ -48,7 +47,7 @@ module.exports = (app, db, jwt, upload) => {
     const details = { _id: new ObjectID(req.params.id) }
     // console.log(req.body)
     // console.log(req.files)
-    console.log('---------------------------------------------')
+    console.log(`Updated ${req.body.title}`)
     const promises = []
     for (let i = 0; i < req.files.length; i++) {
       const page = req.files[i].fieldname.split('-')[1]

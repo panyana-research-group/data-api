@@ -1,11 +1,13 @@
 const lore = require('./lore')
-const { google } = require('googleapis')
-const sheets = google.sheets('v4')
+const calcs = require('./calcs')
+// const { google } = require('googleapis')
+// const sheets = google.sheets('v4')
 
-const ObjectID = require('mongodb').ObjectID
+// const ObjectID = require('mongodb').ObjectID
 
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
+  calcs(app)
   
   // app.get('/convert', (req, res) => {
   //   db.collection('lore').find().toArray((err, allItems) => {
