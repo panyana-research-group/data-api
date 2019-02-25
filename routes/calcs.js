@@ -5,7 +5,7 @@ const mats = require('../data/materials')
 
 module.exports = app => {
   app.post('/calcs/engine/mats', (req, res) => {
-    const optimal = optimalMats(req.body.engine)
+    const optimal = optimalMats(req.body.engine, req.body.filter)
     if (optimal) res.status(200).send({ res: 'success', data: optimal })
     else res.status(200).send({ res: 'none found', data: null })
   })
@@ -20,7 +20,7 @@ module.exports = app => {
 
     for (pwrPoints; pwrPoints <= (pwrOH < 100 ? pwrOH - 5 : 100); pwrPoints++) {
       let ohPoints = pwrOH - pwrPoints
-      const result = optimalMats({ res: engine.res, pwr: pwrPoints, oh: ohPoints, su: engine.su, fe: engine.fe })
+      const result = optimalMats({ res: engine.res, pwr: pwrPoints, oh: ohPoints, su: engine.su, fe: engine.fe }, req.body.filter)
       if (result && result.speed > maxSpeed) {
         maxSpeed = result.speed
         optimal = { ...result, points: { pwr: pwrPoints, oh: ohPoints }}
@@ -32,20 +32,24 @@ module.exports = app => {
   })
 }
 
-function optimalMats(points) {
+function optimalMats(points, filter = null) {
   let maxSpeed = 0
   let optimal = null
   for (let m = 0; m < mats.length; m++) {
+    if (filter && !filter[mats[m].name].enabled) continue
     for (let co = 0; co < mats.length; co++) {
+      if (filter && !filter[mats[co].name].enabled) continue
       for (let ca = 0; ca < mats.length; ca++) {
+        if (filter && !filter[mats[ca].name].enabled) continue
         for (let p = 0; p < mats.length; p++) {
+          if (filter && !filter[mats[p].name].enabled) continue
           const pwr = points.pwr +
-            points.pwr * mats[m].boosts.engine.mech.pwr +
-            points.pwr * mats[co].boosts.engine.comb.pwr
+            points.pwr * mats[m].boosts.engine.mech.pwr * (filter[mats[m].name].maxQ + 10)/20 +
+            points.pwr * mats[co].boosts.engine.comb.pwr * (filter[mats[co].name].maxQ + 10)/20
           const oh = points.oh + 
-            points.oh * mats[m].boosts.engine.mech.oh +
-            points.oh * mats[co].boosts.engine.comb.oh
-          const cf = coolingFactor(mats[ca].cf, mats[p].cf)
+            points.oh * mats[m].boosts.engine.mech.oh * (filter[mats[m].name].maxQ + 10)/20 +
+            points.oh * mats[co].boosts.engine.comb.oh * (filter[mats[co].name].maxQ + 10)/20
+          const cf = coolingFactor(mats[ca].cf, mats[p].cf, filter[mats[ca].name].maxQ, filter[mats[p].name].maxQ)
 
           const w = weight('engine', points, {
             casing: mats[ca].weight,

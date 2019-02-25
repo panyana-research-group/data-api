@@ -10,6 +10,7 @@ module.exports = {
     "prettier",
     "standard"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaVersion": 2017 
   },
