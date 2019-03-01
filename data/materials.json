@@ -3,6 +3,7 @@
     "name": "Aluminum",
     "weight": 0.33,
     "rarity": "exotic",
+    "color": "#00ffff",
     "cf": 15,
     "boosts": {
       "res": 0.3613,
@@ -38,6 +39,7 @@
     "name": "Titanium",
     "weight": 0.35,
     "rarity": "rare",
+    "color": "#6a9cee",
     "cf": 6,
     "boosts": {
       "res": 0.2117,
@@ -73,6 +75,7 @@
     "name": "Tin",
     "weight": 0.38,
     "rarity": "uncommon",
+    "color": "#efefef",
     "cf": 27,
     "boosts": {
       "res": 0.2628,
@@ -108,6 +111,7 @@
     "name": "Iron",
     "weight": 0.39,
     "rarity": "common",
+    "color": "#999999",
     "cf": 15,
     "boosts": {
       "res": 0.3139,
@@ -143,6 +147,7 @@
     "name": "Bronze",
     "weight": 0.42,
     "rarity": "common",
+    "color": "#e26563",
     "cf": 18,
     "boosts": {
       "res": 0.2117,
@@ -178,6 +183,7 @@
     "name": "Nickel",
     "weight": 0.43,
     "rarity": "rare",
+    "color": "#91c579",
     "cf": 24,
     "boosts": {
       "res": 0.3613,
@@ -213,6 +219,7 @@
     "name": "Orthite",
     "weight": 0.43,
     "rarity": "uncommon",
+    "color": "#facc99",
     "cf": 21,
     "boosts": {
       "res": 0.2628,
@@ -248,6 +255,7 @@
     "name": "Epilar",
     "weight": 0.46,
     "rarity": "rare",
+    "color": "#b5d8a6",
     "cf": 21,
     "boosts": {
       "res": 0.4599,
@@ -283,6 +291,7 @@
     "name": "Steel",
     "weight": 0.50,
     "rarity": "uncommon",
+    "color": "#cccccc",
     "cf": 12,
     "boosts": {
       "res": 0.4599,
@@ -318,6 +327,7 @@
     "name": "Eternium",
     "weight": 0.50,
     "rarity": "exotic",
+    "color": "#b4a6d8",
     "cf": 6,
     "boosts": {
       "res": 0.6606,
@@ -353,6 +363,7 @@
     "name": "Copper",
     "weight": 0.55,
     "rarity": "uncommon",
+    "color": "#f2c314",
     "cf": 39,
     "boosts": {
       "res": 0.0657,
@@ -388,6 +399,7 @@
     "name": "Lead",
     "weight": 0.56,
     "rarity": "common",
+    "color": "#b7b7b7",
     "cf": 12,
     "boosts": {
       "res": 0.1642,
@@ -423,6 +435,7 @@
     "name": "Silver",
     "weight": 0.66,
     "rarity": "rare",
+    "color": "#d0e0e3",
     "cf": 45,
     "boosts": {
       "res": 0.0657,
@@ -458,6 +471,7 @@
     "name": "Tungsten",
     "weight": 0.70,
     "rarity": "exotic",
+    "color": "#777777",
     "cf": 12,
     "boosts": {
       "res": 0.8577,
@@ -493,6 +507,7 @@
     "name": "Gold",
     "weight": 0.73,
     "rarity": "exotic",
+    "color": "#ffe694",
     "cf": 51,
     "boosts": {
       "res": 0.0657,
