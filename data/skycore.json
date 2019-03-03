@@ -1,0 +1,86 @@
+{
+  "shardWeight": 0.2,
+  "parts": [
+    {
+      "name": "Atlas Sky Core",
+      "base": 1000,
+      "costs": {
+        "casing": 100,
+        "internals": 40,
+        "shards": 1
+      }
+    },
+    {
+      "name": "Sky Core Atlas Enhancer",
+      "base": 400,
+      "costs": {
+        "casing": 40,
+        "internals": 40,
+        "shards": 3
+      }
+    },
+    {
+      "name": "Sky Core Generator",
+      "base": 400,
+      "costs": {
+        "casing": 30,
+        "internals": 30,
+        "shards": 5
+      }
+    },
+    {
+      "name": "Sky Core Air Filter",
+      "base": 600,
+      "costs": {
+        "casing": 50,
+        "internals": 50,
+        "shards": 4
+      }
+    },
+    {
+      "name": "Sky Core Coolant System",
+      "base": 600,
+      "costs": {
+        "casing": 60,
+        "internals": 50,
+        "shards": 3
+      }
+    },
+    {
+      "name": "Sky Core Stabiliser",
+      "base": 600,
+      "costs": {
+        "casing": 40,
+        "internals": 40,
+        "shards":6
+      }
+    },
+    {
+      "name": "Sky Core Computer",
+      "base": 800,
+      "costs": {
+        "casing": 40,
+        "internals": 50,
+        "shards": 10
+      }
+    },
+    {
+      "name": "Sky Core Circuitry Network",
+      "base": 800,
+      "costs": {
+        "casing": 60,
+        "internals": 50,
+        "shards": 8
+      }
+    },
+    {
+      "name": "Sky Core Efficiency Module",
+      "base": 800,
+      "costs": {
+        "casing": 70,
+        "internals": 60,
+        "shards": 6
+      }
+    }
+  ]
+}
