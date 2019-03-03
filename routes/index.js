@@ -1,6 +1,6 @@
 const lore = require('./lore')
-const calcs = require('./calcs')
 const mats = require('../data/materials')
+const calcs = require('./calcs/index.js')
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')
 
@@ -14,7 +14,7 @@ module.exports = (app, db, jwt, upload) => {
     if (mats) res.status(200).send(mats)
     else res.status(500).send(Error('materials.json file not found!'))
   })
-  
+
   // app.get('/convert', (req, res) => {
   //   db.collection('lore').find().toArray((err, allItems) => {
   //     if (err) res.status(500).send(err)
@@ -24,7 +24,7 @@ module.exports = (app, db, jwt, upload) => {
   //         promises.push(
   //           db.collection('lore').updateOne(
   //             { _id: new ObjectID(item._id) },
-  //             { $set: 
+  //             { $set:
   //              {
   //                addWiki: item.addWiki.split(', ').sort((a, b) => {
   //                  if (parseInt(a) < parseInt(b)) return -1
@@ -43,7 +43,7 @@ module.exports = (app, db, jwt, upload) => {
   //     }
   //   })
   // })
-  
+
   // app.get('/convert', (req, res) => {
   //   sheets.spreadsheets.values.get({
   //     auth: jwt,

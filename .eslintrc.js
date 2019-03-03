@@ -2,8 +2,7 @@ module.exports = {
   "root": true,
   "extends": [
     "standard",
-    "prettier",
-    "prettier/standard"
+    "plugin:prettier/recommended"
   ],
   "plugins": [
     "import",
