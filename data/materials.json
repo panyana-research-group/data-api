@@ -7,6 +7,7 @@
     "cf": 15,
     "boosts": {
       "res": 0.3613,
+      "core": 0.05,
       "engine": {
         "mech": {
           "pwr": 0.2517,
@@ -43,6 +44,7 @@
     "cf": 6,
     "boosts": {
       "res": 0.2117,
+      "core": 0.02,
       "engine": {
         "mech": {
           "pwr": 0.1921,
@@ -79,6 +81,7 @@
     "cf": 27,
     "boosts": {
       "res": 0.2628,
+      "core": 0.09,
       "engine": {
         "mech": {
           "pwr": 0.1126,
@@ -115,6 +118,7 @@
     "cf": 15,
     "boosts": {
       "res": 0.3139,
+      "core": 0.05,
       "engine": {
         "mech": {
           "pwr": 0.1126,
@@ -151,6 +155,7 @@
     "cf": 18,
     "boosts": {
       "res": 0.2117,
+      "core": 0.06,
       "engine": {
         "mech": {
           "pwr": 0.1325,
@@ -187,6 +192,7 @@
     "cf": 24,
     "boosts": {
       "res": 0.3613,
+      "core": 0.08,
       "engine": {
         "mech": {
           "pwr": 0.0927,
@@ -223,6 +229,7 @@
     "cf": 21,
     "boosts": {
       "res": 0.2628,
+      "core": 0.07,
       "engine": {
         "mech": {
           "pwr": 0.1921,
@@ -259,6 +266,7 @@
     "cf": 21,
     "boosts": {
       "res": 0.4599,
+      "core": 0.07,
       "engine": {
         "mech": {
           "pwr": 0.2318,
@@ -295,6 +303,7 @@
     "cf": 12,
     "boosts": {
       "res": 0.4599,
+      "core": 0.04,
       "engine": {
         "mech": {
           "pwr": 0.1523,
@@ -331,6 +340,7 @@
     "cf": 6,
     "boosts": {
       "res": 0.6606,
+      "core": 0.02,
       "engine": {
         "mech": {
           "pwr": 0.0927,
@@ -367,6 +377,7 @@
     "cf": 39,
     "boosts": {
       "res": 0.0657,
+      "core": 0.13,
       "engine": {
         "mech": {
           "pwr": 0.0331,
@@ -403,6 +414,7 @@
     "cf": 12,
     "boosts": {
       "res": 0.1642,
+      "core": 0.04,
       "engine": {
         "mech": {
           "pwr": 0.0927,
@@ -439,6 +451,7 @@
     "cf": 45,
     "boosts": {
       "res": 0.0657,
+      "core": 0.15,
       "engine": {
         "mech": {
           "pwr": 0.0331,
@@ -475,6 +488,7 @@
     "cf": 12,
     "boosts": {
       "res": 0.8577,
+      "core": 0.04,
       "engine": {
         "mech": {
           "pwr": 0.3113,
@@ -511,6 +525,7 @@
     "cf": 51,
     "boosts": {
       "res": 0.0657,
+      "core": 0.17,
       "engine": {
         "mech": {
           "pwr": 0.0331,
