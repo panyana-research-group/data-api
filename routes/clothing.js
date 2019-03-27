@@ -26,10 +26,10 @@ module.exports = (app, db, jwt, upload) => {
       name: req.body.name,
       type: req.body.type.toLowerCase(),
       rarity: req.body.rarity,
-      cultures: [],
-      tiers: [],
-      flavorImage: '',
-      baseImage: ''
+      cultures: req.body.rarity === 'Stash' ? ['N/A'] : [],
+      tiers: req.body.rarity === 'Stash' ? ['N/A'] : [],
+      flavor: '',
+      base: ''
     }
     db.collection('clothing').insertOne(item, (err, result) => {
       if (err) res.status(500).send(err)
@@ -87,10 +87,13 @@ module.exports = (app, db, jwt, upload) => {
           tiers: req.body.tiers
             .split(',')
             .map(Number)
-            .sort()
+            .sort(),
+          notes: req.body.notes
         }
         if (update.tiers[0] === 0) update.tiers = []
+        if (isNaN(update.tiers[0])) update.tiers = ['N/A']
         if (update.cultures[0] === '') update.cultures = []
+        if (update.notes === 'null') update.notes = ''
         for (let i = 0; i < results.length; i++) {
           if (results[i].data.name.search(/_flavor\./) > -1)
             update.flavor = results[i].data.id
@@ -109,4 +112,32 @@ module.exports = (app, db, jwt, upload) => {
         res.status(500).send(err)
       })
   })
+
+  // app.get('/test', (req, res) => {
+  //   const promises = []
+  //   db.collection('clothing')
+  //     .find()
+  //     .toArray((err, items) => {
+  //       if (err) res.status(500).send(err)
+  //       else {
+  //         items.forEach(item => {
+  //           promises.push(
+  //             db.collection('clothing').updateOne(
+  //               { _id: new ObjectID(item._id) },
+  //               {
+  //                 $set: { notes: '' }
+  //               }
+  //             )
+  //           )
+  //         })
+  //       }
+  //     })
+  //   Promise.all(promises)
+  //     .then(results => {
+  //       res.status(200).send(results)
+  //     })
+  //     .catch(err => {
+  //       res.status(500).send(err)
+  //     })
+  // })
 }
