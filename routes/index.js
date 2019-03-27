@@ -1,4 +1,5 @@
 const lore = require('./lore')
+const clothing = require('./clothing')
 const calcs = require('./calcs/index.js')
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')
@@ -10,6 +11,8 @@ const skycore = require('../data/skycore')
 
 module.exports = (app, db, jwt, upload) => {
   lore(app, db, jwt, upload)
+  clothing(app, db, jwt, upload)
+
   calcs(app)
 
   app.get('/materials', (req, res) => {
