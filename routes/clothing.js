@@ -91,7 +91,8 @@ module.exports = (app, db, jwt, upload) => {
           notes: req.body.notes
         }
         if (update.tiers[0] === 0) update.tiers = []
-        if (isNaN(update.tiers[0])) update.tiers = ['N/A']
+        console.log(update.tiers)
+        if (update.tiers[0] && isNaN(update.tiers[0])) update.tiers = ['N/A']
         if (update.cultures[0] === '') update.cultures = []
         if (update.notes === 'null') update.notes = ''
         for (let i = 0; i < results.length; i++) {
