@@ -26,12 +26,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.3730,
-          "piv": 0.1293
+          "pwr": 0.36,
+          "piv": 0.10
         },
         "aileron": {
-          "pwr": 0.1151,
-          "piv": 0.3810
+          "pwr": 0.10,
+          "piv": 0.36
         }
       },
       "cannon/swivel": {
@@ -79,12 +79,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.2857,
-          "piv": 0.2041
+          "pwr": 0.26,
+          "piv": 0.18
         },
         "aileron": {
-          "pwr": 0.1944,
-          "piv": 0.2925
+          "pwr": 0.18,
+          "piv": 0.26
         }
       },
       "cannon/swivel": {
@@ -132,12 +132,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.1667,
-          "piv": 0.1633
+          "pwr": 0.14,
+          "piv": 0.13
         },
         "aileron": {
-          "pwr": 0.1548,
-          "piv": 0.1769
+          "pwr": 0.13,
+          "piv": 0.14
         }
       },
       "cannon/swivel": {
@@ -185,12 +185,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.1667,
-          "piv": 0.1429
+          "pwr": 0.14,
+          "piv": 0.12
         },
         "aileron": {
-          "pwr": 0.1349,
-          "piv": 0.1769
+          "pwr": 0.12,
+          "piv": 0.14
         }
       },
       "cannon/swivel": {
@@ -238,12 +238,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.1944,
-          "piv": 0.1429
+          "pwr": 0.18,
+          "piv": 0.12
         },
         "aileron": {
-          "pwr": 0.1349,
-          "piv": 0.2041
+          "pwr": 0.12,
+          "piv": 0.18
         }
       },
       "cannon/swivel": {
@@ -291,12 +291,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.1349,
-          "piv": 0.2245
+          "pwr": 0.12,
+          "piv": 0.20
         },
         "aileron": {
-          "pwr": 0.2143,
-          "piv": 0.1429
+          "pwr": 0.20,
+          "piv": 0.12
         }
       },
       "cannon/swivel": {
@@ -344,12 +344,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.2857,
-          "piv": 0.1429
+          "pwr": 0.26,
+          "piv": 0.12
         },
         "aileron": {
-          "pwr": 0.1349,
-          "piv": 0.2925
+          "pwr": 0.12,
+          "piv": 0.26
         }
       },
       "cannon/swivel": {
@@ -397,12 +397,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.3452,
-          "piv": 0.0680
+          "pwr": 0.33,
+          "piv": 0.03
         },
         "aileron": {
-          "pwr": 0.0556,
-          "piv": 0.3537
+          "pwr": 0.03,
+          "piv": 0.33
         }
       },
       "cannon/swivel": {
@@ -450,12 +450,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.2263,
-          "piv": 0.1088
+          "pwr": 0.21,
+          "piv": 0.08
         },
         "aileron": {
-          "pwr": 0.0952,
-          "piv": 0.2313
+          "pwr": 0.08,
+          "piv": 0.21
         }
       },
       "cannon/swivel": {
@@ -503,12 +503,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.1349,
-          "piv": 0.2245
+          "pwr": 0.12,
+          "piv": 0.20
         },
         "aileron": {
-          "pwr": 0.2143,
-          "piv": 0.1429
+          "pwr": 0.20,
+          "piv": 0.12
         }
       },
       "cannon/swivel": {
@@ -556,12 +556,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.0476,
-          "piv": 0.0476
+          "pwr": 0.02,
+          "piv": 0.01
         },
         "aileron": {
-          "pwr": 0.0357,
-          "piv": 0.0544
+          "pwr": 0.01,
+          "piv": 0.02
         }
       },
       "cannon/swivel": {
@@ -609,12 +609,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.1349,
-          "piv": 0.0680
+          "pwr": 0.12,
+          "piv": 0.03
         },
         "aileron": {
-          "pwr": 0.0556,
-          "piv": 0.1429
+          "pwr": 0.03,
+          "piv": 0.12
         }
       },
       "cannon/swivel": {
@@ -662,12 +662,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.0476,
-          "piv": 0.0476
+          "pwr": 0.02,
+          "piv": 0.01
         },
         "aileron": {
-          "pwr": 0.0357,
-          "piv": 0.0544
+          "pwr": 0.01,
+          "piv": 0.02
         }
       },
       "cannon/swivel": {
@@ -715,12 +715,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.4643,
-          "piv": 0.3265
+          "pwr": 0.45,
+          "piv": 0.29
         },
         "aileron": {
-          "pwr": 0.3135,
-          "piv": 0.4694
+          "pwr": 0.29,
+          "piv": 0.45
         }
       },
       "cannon/swivel": {
@@ -768,12 +768,12 @@
       },
       "wing": {
         "mech": {
-          "pwr": 0.0476,
-          "piv": 0.0476
+          "pwr": 0.02,
+          "piv": 0.01
         },
         "aileron": {
-          "pwr": 0.0357,
-          "piv": 0.0544
+          "pwr": 0.01,
+          "piv": 0.02
         }
       },
       "cannon/swivel": {
