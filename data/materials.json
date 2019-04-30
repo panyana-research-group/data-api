@@ -36,18 +36,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.24,
+          "rof": 0.14
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.21,
+          "cap": 0.36,
+          "oh": 0.01
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.10,
+          "oh": 0.02,
+          "rof": 0.13
         }
       }
     }
@@ -89,18 +89,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.18,
+          "rof": 0.26
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.12,
+          "cap": 0.26,
+          "oh": 0.10
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.18,
+          "oh": 0.14,
+          "rof": 0.08
         }
       }
     }
@@ -142,18 +142,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.10,
+          "rof": 0.21
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.14,
+          "cap": 0.14,
+          "oh": 0.08
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.13,
+          "oh": 0.12,
+          "rof": 0.10
         }
       }
     }
@@ -195,18 +195,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.10,
+          "rof": 0.18
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.18,
+          "cap": 0.14,
+          "oh": 0.12
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.12,
+          "oh": 0.18,
+          "rof": 0.12
         }
       }
     }
@@ -248,18 +248,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.12,
+          "rof": 0.18
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.12,
+          "cap": 0.18,
+          "oh": 0.08
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.12,
+          "oh": 0.12,
+          "rof": 0.08
         }
       }
     }
@@ -301,18 +301,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.08,
+          "rof": 0.29
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.21,
+          "cap": 0.12,
+          "oh": 0.20
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.20,
+          "oh": 0.29,
+          "rof": 0.13
         }
       }
     }
@@ -354,18 +354,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.18,
+          "rof": 0.18
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.14,
+          "cap": 0.26,
+          "oh": 0.01
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.12,
+          "oh": 0.02,
+          "rof": 0.10
         }
       }
     }
@@ -407,18 +407,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.22,
+          "rof": 0.05
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.26,
+          "cap": 0.33,
+          "oh": 0.08
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.03,
+          "oh": 0.12,
+          "rof": 0.18
         }
       }
     }
@@ -460,18 +460,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.13,
+          "rof": 0.12
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.26,
+          "cap": 0.21,
+          "oh": 0.18
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.08,
+          "oh": 0.26,
+          "rof": 0.18
         }
       }
     }
@@ -513,18 +513,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.08,
+          "rof": 0.29
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.38,
+          "cap": 0.12,
+          "oh": 0.24
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.20,
+          "oh": 0.36,
+          "rof": 0.25
         }
       }
     }
@@ -566,18 +566,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.01,
+          "rof": 0.02
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.02,
+          "cap": 0.02,
+          "oh": 0.01
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.01,
+          "oh": 0.02,
+          "rof": 0.01
         }
       }
     }
@@ -619,18 +619,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.08,
+          "rof": 0.05
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.09,
+          "cap": 0.12,
+          "oh": 0.05
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.03,
+          "oh": 0.09,
+          "rof": 0.05
         }
       }
     }
@@ -672,18 +672,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.01,
+          "rof": 0.02
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.02,
+          "cap": 0.02,
+          "oh": 0.01
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.01,
+          "oh": 0.02,
+          "rof": 0.01
         }
       }
     }
@@ -725,18 +725,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.29,
+          "rof": 0.45
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.50,
+          "cap": 0.45,
+          "oh": 0.29
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.29,
+          "oh": 0.45,
+          "rof": 0.34
         }
       }
     }
@@ -778,18 +778,18 @@
       },
       "cannon/swivel": {
         "firing": {
-          "pwr": 0,
-          "rof": 0
+          "pwr": 0.01,
+          "rof": 0.02
         },
         "barrel": {
-          "pwr": 0,
-          "cap": 0,
-          "oh": 0
+          "pwr": 0.02,
+          "cap": 0.02,
+          "oh": 0.01
         },
         "ammo": {
-          "cap": 0,
-          "oh": 0,
-          "rof": 0
+          "cap": 0.01,
+          "oh": 0.02,
+          "rof": 0.01
         }
       }
     }
