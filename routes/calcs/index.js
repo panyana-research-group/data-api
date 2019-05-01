@@ -1,6 +1,6 @@
 // Index.js for all calcs
-const engine = require('./engine/index')
-const skycore = require('./skycore/index')
+const engine = require('./engine')
+const skycore = require('./skycore')
 
 const repaircost = require('./repaircost')
 

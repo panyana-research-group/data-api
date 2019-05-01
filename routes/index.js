@@ -1,6 +1,6 @@
 const lore = require('./lore')
 const clothing = require('./clothing')
-const calcs = require('./calcs/index.js')
+const calcs = require('./calcs')
 const auth = require('./auth')
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')

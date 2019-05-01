@@ -15,8 +15,9 @@ const upload = multer()
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-
-const whitelist = ['http://localhost:3000', 'https://panyanaresearch.com']
+let whitelist = null
+if (!process.env.ENVIRONMENT) whitelist = ['http://localhost:3000']
+else whitelist = ['https://panyanaresearch.com']
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) callback(null, true)
