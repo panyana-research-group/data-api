@@ -2,6 +2,8 @@ const lore = require('./lore')
 const clothing = require('./clothing')
 const calcs = require('./calcs')
 const auth = require('./auth')
+const materials = require('./materials')
+
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')
 
@@ -15,6 +17,7 @@ module.exports = (app, db, jwt, upload) => {
   clothing(app, db, jwt, upload)
   calcs(app)
   auth(app)
+  materials(app, db, jwt, upload)
 
   app.get('/materials', (req, res) => {
     if (mats) res.status(200).send(mats)

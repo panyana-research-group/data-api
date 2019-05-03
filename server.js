@@ -42,7 +42,7 @@ jwtClient.authorize((err, token) => {
 })
 
 mongo.connect(
-  'mongodb://' +
+  'mongodb+srv://' +
     process.env.DB_USER +
     ':' +
     process.env.DB_PASS +
@@ -51,7 +51,7 @@ mongo.connect(
   (err, db) => {
     if (err) return console.error(err)
     require('./routes/index.js')(app, db.db('panyana-api'), jwtClient, upload)
-    console.log('Connected to MongoDB')
+    console.log('Connected to MongoDB Atlas')
 
     const listener = app.listen(
       process.env.ENVIRONMENT ? process.env.PORT : 8000,
