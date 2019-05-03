@@ -42,7 +42,7 @@ jwtClient.authorize((err, token) => {
 })
 
 mongo.connect(
-  'mongodb+srv://' +
+  'mongodb://' +
     process.env.DB_USER +
     ':' +
     process.env.DB_PASS +
