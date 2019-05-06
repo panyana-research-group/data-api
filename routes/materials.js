@@ -186,7 +186,8 @@ function intConvert(obj) {
   for (const i in obj) {
     if (typeof obj[i] === 'object') res[i] = intConvert(obj[i])
     else if (obj[i] === '') res[i] = ''
-    else if (typeof obj[i] === 'boolean') res[i] = Boolean(obj[i])
+    else if (obj[i] === 'true') res[i] = true
+    else if (obj[i] === 'false') res[i] = false
     else if (!isNaN(obj[i])) res[i] = Number(obj[i])
     else res[i] = obj[i]
   }
