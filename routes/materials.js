@@ -20,6 +20,7 @@ module.exports = (app, db, jwt, upload) => {
 
   app.post('/materials', (req, res) => {
     const mat = Object.assign({}, req.body)
+    mat.enabled = false
     mat.boosts = {
       res: 0,
       core: 0,
@@ -143,6 +144,7 @@ module.exports = (app, db, jwt, upload) => {
   // app.get('/transfer', (req, res) => {
   //   const copy = [...materials]
   //   copy.forEach(mat => {
+  //     mat.enabled = true
   //     mat.type = 'metal'
   //     mat.icon = ''
   //     mat.flavor = ''
@@ -184,7 +186,8 @@ function intConvert(obj) {
   for (const i in obj) {
     if (typeof obj[i] === 'object') res[i] = intConvert(obj[i])
     else if (obj[i] === '') res[i] = ''
-    else if (!isNaN(obj[i])) res[i] = parseInt(obj[i])
+    else if (typeof obj[i] === 'boolean') res[i] = obj[i]
+    else if (!isNaN(obj[i])) res[i] = Number(obj[i])
     else res[i] = obj[i]
   }
   return res
