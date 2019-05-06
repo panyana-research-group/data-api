@@ -7,7 +7,6 @@ const materials = require('./materials')
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')
 
-const mats = require('../data/materials')
 const skycore = require('../data/skycore')
 
 // const ObjectID = require('mongodb').ObjectID
@@ -18,11 +17,6 @@ module.exports = (app, db, jwt, upload) => {
   calcs(app)
   auth(app)
   materials(app, db, jwt, upload)
-
-  app.get('/materials', (req, res) => {
-    if (mats) res.status(200).send(mats)
-    else res.status(500).send(Error('materials.json file not found!'))
-  })
 
   app.get('/skycore', (req, res) => {
     if (skycore) res.status(200).send(skycore)
