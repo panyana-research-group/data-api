@@ -17,7 +17,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 let whitelist = null
 if (!process.env.ENVIRONMENT) whitelist = ['http://localhost:3000']
-else whitelist = ['https://panyanaresearch.com']
+else
+  whitelist = ['https://panyanaresearch.com', 'https://dev.panyanaresearch.com']
 const corsOptions = {
   origin: (origin, callback) => {
     if (whitelist.indexOf(origin) !== -1 || !origin) callback(null, true)
