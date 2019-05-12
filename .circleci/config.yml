@@ -10,4 +10,6 @@ jobs:
       - checkout
 
       - run:
-          command: yarn sync
+          command: |
+            yarn add sync-glitch-cli -D
+            yarn sync
