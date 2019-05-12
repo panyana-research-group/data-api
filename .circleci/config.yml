@@ -1,6 +1,8 @@
 version: 2
 jobs:
   sync:
+    docker:
+      - image: circleci/node:latest
     steps:
       - checkout
 
