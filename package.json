@@ -9,7 +9,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "lint": "eslint --ext .js --ignore-path .gitignore ."
+    "lint": "eslint --ext .js --ignore-path .gitignore .",
+    "sync": "sync-glitch"
   },
   "dependencies": {
     "auth0": "^2.17.0",
@@ -48,6 +49,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "sync-glitch-cli": "^2.0.1"
   }
 }

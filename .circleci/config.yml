@@ -1,0 +1,17 @@
+version: 2
+jobs:
+  sync:
+    steps:
+      - checkout
+
+      - run:
+        command: yarn sync
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - sync:
+        filters:
+          branches:
+            only: master
