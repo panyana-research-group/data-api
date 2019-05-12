@@ -3,17 +3,11 @@ jobs:
   sync:
     docker:
       - image: circleci/node:latest
+    branches:
+      only:
+        - master
     steps:
       - checkout
 
       - run:
         command: yarn sync
-
-workflows:
-  version: 2
-  build:
-    jobs:
-      - sync:
-        filters:
-          branches:
-            only: master
