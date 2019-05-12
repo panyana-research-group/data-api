@@ -11,5 +11,5 @@ jobs:
 
       - run:
           command: |
-            yarn add sync-glitch-cli -D
+            yarn add sync-glitch-cli -D --ignore-engines
             yarn sync
