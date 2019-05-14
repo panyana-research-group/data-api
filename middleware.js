@@ -37,6 +37,7 @@ module.exports.auth = options => {
         secretCallback(req, decodedToken.header, decodedToken.payload, callback)
       },
       function verifyToken(secret, callback) {
+        console.log(secret)
         jwt.verify(token, secret, options, function(err, decoded) {
           if (err) callback(new UnauthorizedError('invalid_token', err))
           else callback(null, decoded)
