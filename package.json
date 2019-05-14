@@ -1,9 +1,6 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "panyana-api",
-  "version": "0.0.1",
+  "name": "data-api",
+  "version": "1.0.0",
   "description": "Panyana Research Group API",
   "main": "server.js",
   "scripts": {
@@ -13,13 +10,18 @@
     "sync": "sync-glitch"
   },
   "dependencies": {
+    "async": "^2.6.2",
     "auth0": "^2.17.0",
+    "axios": "^0.18.0",
+    "axios-cache-adapter": "^2.3.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "googleapis": "^39.2.0",
+    "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.11",
+    "lodash.set": "^4.3.2",
     "mongodb": "^3.2.3",
     "multer": "^1.4.1",
     "nodemon": "^1.18.11"
@@ -28,14 +30,8 @@
     "node": "11.x"
   },
   "repository": {
-    "url": "https://glitch.com/edit/#!/hello-express"
+    "url": "https://github.com/panyana-research-group/data-api"
   },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "express"
-  ],
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",

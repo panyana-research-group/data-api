@@ -6,6 +6,9 @@ const bodyParser = require('body-parser')
 const mongo = require('mongodb').MongoClient
 const { google } = require('googleapis')
 
+const middleware = require('./middleware')
+const expressJwtSecret = require('./lib/expressJwtSecret')
+
 if (!process.env.ENVIRONMENT) {
   require('dotenv').config()
 }
@@ -26,6 +29,16 @@ const corsOptions = {
   }
 }
 app.use(cors(corsOptions))
+
+const jwtCheck = middleware.auth({
+  secret: expressJwtSecret({
+    jwksUri: 'https://machinemaker.auth0.com/.well-known/jwks.json'
+  }),
+  issuer: 'https://machinemaker.auth0.com/',
+  algorithms: ['RS256']
+})
+
+app.use(jwtCheck)
 
 const jwtClient = new google.auth.JWT(
   process.env.CLIENT_EMAIL,
