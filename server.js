@@ -1,3 +1,5 @@
+require('module-alias/register')
+
 const express = require('express')
 const multer = require('multer')
 const cors = require('cors')
@@ -6,8 +8,8 @@ const bodyParser = require('body-parser')
 const mongo = require('mongodb').MongoClient
 const { google } = require('googleapis')
 
-const middleware = require('./middleware')
-const expressJwtSecret = require('./lib/expressJwtSecret')
+const middleware = require('@lib/middleware')
+const expressJwtSecret = require('@lib/expressJwtSecret')
 
 if (!process.env.ENVIRONMENT) {
   require('dotenv').config()

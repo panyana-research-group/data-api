@@ -7,7 +7,7 @@ const materials = require('./materials')
 // const { google } = require('googleapis')
 // const sheets = google.sheets('v4')
 
-const skycore = require('../data/skycore')
+const skycore = require('@data/skycore')
 
 // const ObjectID = require('mongodb').ObjectID
 

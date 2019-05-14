@@ -1,4 +1,4 @@
-const optimalMats = require('../../../functions/optimalMats.js')
+const optimalMats = require('@functions/optimalMats.js')
 
 module.exports = app => {
   app.post('/calcs/engine/mats', (req, res) => {

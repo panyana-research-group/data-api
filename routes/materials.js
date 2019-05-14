@@ -1,4 +1,4 @@
-// const materials = require('../data/materials')
+// const materials = require('@data/materials')
 const { google } = require('googleapis')
 const drive = google.drive('v3')
 const ObjectID = require('mongodb').ObjectID
@@ -11,10 +11,10 @@ module.exports = (app, db, jwt, upload) => {
         .find()
         .toArray((err, items) => {
           if (err) res.status(500).send(err)
-          else res.status(200).send(items)
+          else res.status(200).send(items.filter(i => i.enabled))
         })
     } else {
-      res.status('NOT IMPLEMENTED')
+      res.status(500).send('NOT IMPLEMENTED')
     }
   })
 

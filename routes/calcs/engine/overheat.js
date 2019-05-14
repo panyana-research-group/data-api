@@ -1,4 +1,4 @@
-const ohTime = require('../../../functions/ohTime.js')
+const ohTime = require('@functions/ohTime.js')
 
 module.exports = app => {
   app.post('/calcs/engine/overheat', (req, res) => {
