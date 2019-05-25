@@ -19,7 +19,8 @@ module.exports = app => {
           su: engine.su,
           fe: engine.fe
         },
-        req.body.filter
+        req.body.filter,
+        req.body.parts
       )
       if (result && result.speed > maxSpeed) {
         maxSpeed = result.speed
